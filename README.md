@@ -1,5 +1,17 @@
 # MinecraftResourcePackTemplate
 
+## 👀 原理
+
+最適化のために [PackSquash-action](https://github.com/ComunidadAylas/PackSquash-action) を使用しています。
+
+このソフトウェアはリソースパックに対して
+
+- モデルデータ(`.json`) 内の不要な記述を削除
+- 画像データ(`.png`) や 音声データ(`.ogg`) を非劣化圧縮
+- 不要なファイルを削除
+
+することにより軽量化を行います。
+
 ## ⚙ セットアップ
 
 1. `Use This Template` を押してリポジトリの設定を入力します。
@@ -85,5 +97,23 @@ ERROR: git コマンドが存在しません。インストールしてから実
 7. マインクラフトでリソースパックを選択。
 
 ## ❓ サポート
+
+### Optifine への対応
+
+Optifine 向けに `.jpm` や `.jem` のファイルを含んでいる場合は、以下の設定を行わなければそれらのファイルが削除されてしまいます。
+
+[.github/workflows/packsquash.yml](.github/workflows/packsquash.yml) の `allow_optifine_mod` オプションのコメントを外してください。
+
+#### 変更前
+```yml
+          # allow_optifine_mod: true
+```
+
+#### 変更後
+```yml
+          allow_optifine_mod: true
+```
+
+### その他
 
 何かわからないことがあれば、[@sya_ri_dayo](https://twitter.com/sya_ri_dayo) (Twitter) や `sya_ri#6200`(Discord) にご連絡ください。
