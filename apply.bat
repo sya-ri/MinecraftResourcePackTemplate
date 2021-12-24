@@ -43,9 +43,9 @@ set /P YES_NO="プッシュ(GitHubに反映)しますか？ [y/N]: "
 if /I not %YES_NO%==y exit /b
 
 @rem GitHub の変更をプルしてくる
-echo
+echo;
 git pull --rebase
-echo
+echo;
 
 @rem プッシュする
 echo;
