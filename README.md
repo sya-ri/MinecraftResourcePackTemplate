@@ -116,4 +116,4 @@ Optifine 向けに `.jpm` や `.jem` のファイルを含んでいる場合は�
 
 ### その他
 
-何かわからないことがあれば、[@sya_ri_dayo](https://twitter.com/sya_ri_dayo) (Twitter) や `sya_ri#6200`(Discord) にご連絡ください。
+何かわからないことがあれば、[@sya_ri_dayo](https://twitter.com/sya_ri_dayo) (Twitter) や [サポートサーバー](https://link.s7a.dev/discord) (Discord) にご連絡ください。
