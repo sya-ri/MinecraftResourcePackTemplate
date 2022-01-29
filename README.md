@@ -1,5 +1,7 @@
 # MinecraftResourcePackTemplate
 
+リソースパックを管理し、軽量化ファイルを生成するのをサポートするリポジトリです。
+
 ## 👀 原理
 
 最適化のために [PackSquash-action](https://github.com/ComunidadAylas/PackSquash-action) を使用しています。
