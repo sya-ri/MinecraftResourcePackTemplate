@@ -41,7 +41,7 @@
 git clone https://github.com/あなたのユーザー名/リポジトリ名
 ```
 
-というコマンドをクローンしたいフォルダにいる状態で実行してください。
+というコマンドをクローンしたいフォルダ(`.minecraft`の`resourcepacks`等)にいる状態で実行してください。
 
 ### 2. リソースパックに変更を加える
 それ以外の場所にファイルを置いても、リソースパックには反映されません。
@@ -94,17 +94,21 @@ ERROR: git コマンドが存在しません。インストールしてから実
 
 Optifine 向けに `.jpm` や `.jem` のファイルを含んでいる場合は、以下の設定を行わなければそれらのファイルが削除されてしまいます。
 
-[.github/workflows/packsquash.yml](.github/workflows/packsquash.yml) の `allow_optifine_mod` オプションのコメントを外してください。
-
-#### 変更前
 ```yml
-          # allow_optifine_mod: true
+allow_optifine_mod: false
 ```
 
-#### 変更後
+[.github/workflows/packsquash.yml](.github/workflows/packsquash.yml) の `allow_optifine_mod` オプションを `true` にしてください。
+
+### 大きい画像を扱う場合
+
+画像のサイズの縦横どちらかが8192pxを超えている場合、エラーになってしまいます。
+
 ```yml
-          allow_optifine_mod: true
+maximum_image_width_and_height: 8192
 ```
+
+画像に合わせてオプションを変更してください。
 
 ### その他
 
