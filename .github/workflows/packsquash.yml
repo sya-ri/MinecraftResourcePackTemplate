@@ -1,9 +1,5 @@
 name: Optimize Resource Pack
-on:
-  push:
-    paths:
-      - 'pack/**'
-      - '.github/workflows/packsquash.yml'
+on: [push]
 jobs:
   packsquash:
     runs-on: ubuntu-latest
@@ -14,15 +10,16 @@ jobs:
           fetch-depth: 0 # 変更しないでください
       - name: Run PackSquash
         uses: ComunidadAylas/PackSquash-action@v2
-        with:
-          # allow_optifine_mod: true
+        # with:
+        #   allow_optifine_mod: true
       - name: Download Optimized Pack
+        if: startsWith(github.ref, 'refs/tags/')
         uses: actions/download-artifact@v2
         with:
           name: Optimized pack
       - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: action-v${{ github.run_number }}
           files: |
             pack.zip
