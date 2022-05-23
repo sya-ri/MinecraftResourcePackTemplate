@@ -94,7 +94,8 @@ ERROR: git コマンドが存在しません。インストールしてから実
 
 ## 🔧 オプション
 
-必要になることが多いオプションについては、ワークフローファイルに設定してあります。[.github/workflows/packsquash.yml](.github/workflows/packsquash.yml) から設定を変更することができます。それ以外の設定に興味がある場合は[公式のドキュメント](https://github.com/ComunidadAylas/PackSquash-action#-usage)を参考にしてください。
+必要になることが多いオプションについては、[ワークフローファイル](.github/workflows/packsquash.yml)に設定してあります。
+それ以外の設定に興味がある場合は[公式のドキュメント](https://github.com/ComunidadAylas/PackSquash-action#-usage)を参考にしてください。
 
 ### Optifine に対応する
 
