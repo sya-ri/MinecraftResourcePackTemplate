@@ -44,9 +44,12 @@ git clone https://github.com/あなたのユーザー名/リポジトリ名
 というコマンドをクローンしたいフォルダ(`.minecraft` の `resourcepacks` など)にいる状態で実行してください。
 
 ### 2. リソースパックに変更を加える
-それ以外の場所にファイルを置いても、リソースパックには反映されません。
+
+クローンしたフォルダの中にフォルダやファイルを作成できます。普段通り、リソースパックに変更を加えられます。
 
 ### 3. `upload.bat` / `upload.sh` を起動する
+
+変更を保存・アップロードするためのスクリプトです。
 
 #### エラー: Git コマンドが見つからない
 
@@ -78,7 +81,7 @@ ERROR: git コマンドが存在しません。インストールしてから実
 プッシュ(GitHubに反映)しますか？ [y/N]: 
 ```
 
-基本的に `y` と入力してください。連続で変更を加える場合のみ `N` と入力してください。
+基本的に `y` と入力してください。連続で変更を加える場合など、プッシュしたくなければ `N` と入力してください。
 
 ### 7. リソースパックのダウンロード
 
@@ -89,28 +92,30 @@ ERROR: git コマンドが存在しません。インストールしてから実
 
 - GitHub の変更をダウンロードする場合は `download.bat` / `download.sh` を起動してください。
 
-## ❓ サポート
+## 🔧 オプション
 
-### Optifine への対応
+必要になることが多いオプションについては、ワークフローファイルに設定してあります。[.github/workflows/packsquash.yml](.github/workflows/packsquash.yml) から設定を変更することができます。それ以外の設定に興味がある場合は[公式のドキュメント](https://github.com/ComunidadAylas/PackSquash-action#-usage)を参考にしてください。
 
-Optifine 向けに `.jpm` や `.jem` のファイルを含んでいる場合は、以下の設定を行わなければそれらのファイルが削除されてしまいます。
+### Optifine に対応する
+
+`.jpm` や `.jem` などのファイルは、設定を変更しなければ無視されてしまいます。
 
 ```yml
 allow_optifine_mod: false
 ```
 
-[.github/workflows/packsquash.yml](.github/workflows/packsquash.yml) の `allow_optifine_mod` オプションを `true` にしてください。
+`allow_optifine_mod` オプションを `false` から `true` にしてください。
 
 ### 大きい画像を扱う場合
 
-画像のサイズの縦横どちらかが8192pxを超えている場合、エラーになってしまいます。
+画像のサイズの縦横どちらかが8192pxを超えている場合、エラーになってしまいます。しかし、あまりにも大きい画像を使ってしまうと、リソースパックを読み込めないユーザーがいることに注意してください。
 
 ```yml
 maximum_image_width_and_height: 8192
 ```
 
-画像に合わせてオプションを変更してください。
+`maximum_image_width_and_height` オプションを画像に合わせて変更してください。
 
-### その他
+## ❓ サポート
 
 何かわからないことがあれば、[@sya_ri_dayo](https://twitter.com/sya_ri_dayo) (Twitter) や [サポートサーバー](https://link.s7a.dev/discord) (Discord) にご連絡ください。
