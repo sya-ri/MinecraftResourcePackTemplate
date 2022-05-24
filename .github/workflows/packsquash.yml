@@ -9,7 +9,7 @@ jobs:
         with:
           fetch-depth: 0 # 変更しないでください
       - name: Run PackSquash
-        uses: ComunidadAylas/PackSquash-action@v2
+        uses: ComunidadAylas/PackSquash-action@v3
         with:
           allow_optifine_mod: false # デフォルト: false / Optifine の有効化
           maximum_image_width_and_height: 8192 # デフォルト: 8192 / 画像の最大幅・高さ
