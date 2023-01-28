@@ -1,3 +1,7 @@
+#!/bin/sh
+
+cd "$(dirname "$0")"
+
 # Yes/No の確認
 checkYesNo() {
   read YES_NO

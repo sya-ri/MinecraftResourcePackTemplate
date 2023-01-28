@@ -1,3 +1,7 @@
+#!/bin/sh
+
+cd "$(dirname "$0")"
+
 # Git コマンドが使えるか確認する
 git > /dev/null 2>&1
 
